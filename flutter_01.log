@@ -1,0 +1,99 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter pub get
+
+## exception
+
+PathAccessException: PathAccessException: Deletion failed, path = 'D:\SUB FLUTTER\restoguh\.android' (OS Error: The process cannot access the file because it is being used by another process.
+, errno = 32)
+
+```
+#0      _Directory._deleteSync (dart:io/directory_impl.dart:193:7)
+#1      FileSystemEntity.deleteSync (dart:io/file_system_entity.dart:424:7)
+#2      ForwardingFileSystemEntity.deleteSync (package:file/src/forwarding/forwarding_file_system_entity.dart:70:16)
+#3      ErrorHandlingDirectory.deleteSync.<anonymous closure> (package:flutter_tools/src/base/error_handling_io.dart:481:22)
+#4      _runSync (package:flutter_tools/src/base/error_handling_io.dart:590:14)
+#5      ErrorHandlingDirectory.deleteSync (package:flutter_tools/src/base/error_handling_io.dart:480:12)
+#6      ErrorHandlingFileSystem.deleteIfExists (package:flutter_tools/src/base/error_handling_io.dart:80:12)
+#7      AndroidProject._regenerateLibrary (package:flutter_tools/src/project.dart:658:29)
+#8      AndroidProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:633:13)
+#9      FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:356:21)
+<asynchronous suspension>
+#10     PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:326:7)
+<asynchronous suspension>
+#11     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1336:27)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#13     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:296:9)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:244:5)
+<asynchronous suspension>
+#17     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:91:9)
+<asynchronous suspension>
+#18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#19     main (package:flutter_tools/executable.dart:91:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.10.0, on Microsoft Windows [Version 10.0.19045.2965], locale en-US)
+    • Flutter version 3.10.0 on channel stable at D:\SOFTWARE\FLUTTER\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 84a1e904f4 (12 days ago), 2023-05-09 07:41:44 -0700
+    • Engine revision d44b5a94c9
+    • Dart version 3.0.0
+    • DevTools version 2.23.1
+
+[✓] Windows Version (Installed version of Windows is version 10 or higher)
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.2)
+    • Android SDK at D:\SOFTWARE\FLUTTER\cmdline-tools
+    • Platform android-33, build-tools 33.0.2
+    • ANDROID_HOME = C:\ANDROID
+    • Java binary at: C:\ANDROID\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 17.0.6+0-b2043.56-9586694)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Visual Studio - develop for Windows (Visual Studio Build Tools 2019 16.11.20)
+    • Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools
+    • Visual Studio Build Tools 2019 version 16.11.32929.386
+    ✗ The current Visual Studio installation is incomplete. Please reinstall Visual Studio.
+
+[✓] Android Studio (version 2022.2)
+    • Android Studio at C:\ANDROID
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 17.0.6+0-b2043.56-9586694)
+
+[✓] VS Code (version 1.78.2)
+    • VS Code at C:\Users\LENOVO\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension can be installed from:
+      🔨 https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+[✓] Connected device (4 available)
+    • vivo 1819 (mobile) • CMV8HADQGYEQEU6H • android-arm64  • Android 11 (API 30)
+    • Windows (desktop)  • windows          • windows-x64    • Microsoft Windows [Version 10.0.19045.2965]
+    • Chrome (web)       • chrome           • web-javascript • Google Chrome 113.0.5672.127
+    • Edge (web)         • edge             • web-javascript • Microsoft Edge 113.0.1774.42
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 1 category.
+```
