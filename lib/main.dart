@@ -1,34 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:restoguh/ui/restaurant_detail_page.dart';
-import 'package:restoguh/ui/restaurant_list_page.dart';
-import 'model/restaurant.dart';
+
+import 'styles/styles.dart';
+import 'data/model/restaurant_list_model.dart';
+import 'ui/restaurant_detail_page.dart';
+import 'ui/restaurant_list_page.dart';
+import 'ui/restaurant_search_page.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'News App',
       debugShowCheckedModeBanner: false,
+      title: 'Restoguh'.toUpperCase(),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        colorScheme: Theme.of(context).colorScheme.copyWith(
+              primary: primaryColor,
+              onPrimary: Colors.black,
+              secondary: secondaryColor,
+            ),
+        scaffoldBackgroundColor: Colors.white,
+        // textTheme: myTextTheme,
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          color: secondaryColor,
+          titleTextStyle: Theme.of(context).textTheme.headline6!.copyWith(
+                color: Colors.white,
+              ),
+          iconTheme: const IconThemeData(color: Colors.white),
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: RestaurantListPage.routeName,
       routes: {
-        RestaurantListPage.routeName: (context) => const RestaurantListPage(),
+        RestaurantListPage.routeName: (_) => const RestaurantListPage(),
         RestaurantDetailPage.routeName: (context) => RestaurantDetailPage(
             restaurant:
                 ModalRoute.of(context)?.settings.arguments as Restaurant),
-        // NewsListPage.routeName: (context) => const NewsListPage(),
-        // ArticleDetailPage.routeName: (context) => ArticleDetailPage(
-        //       article: ModalRoute.of(context)?.settings.arguments as Article,
-        //     ),
+        RestaurantSearchPage.routeName: (_) => const RestaurantSearchPage(),
       },
     );
   }
